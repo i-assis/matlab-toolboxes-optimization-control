@@ -1,0 +1,106 @@
+function varargout = binmodel(varargin)
+%BINMODEL  Converts nonlinear expression to linear binary model
+%
+% [plinear1,..,plinearN,F] = BINMODEL(p1,...,pN) is used to convert
+% nonlinear expressions involving binary variables to the correponding
+% linear model, using auxilliary variables and constraints
+%
+% See also BINARY, BINVAR, SOLVESDP
+
+% Author Johan Löfberg
+% $Id: binmodel.m,v 1.2 2006/11/08 13:36:29 joloef Exp $
+
+all_linear = 1;
+p = [];
+for i = 1:nargin
+    [n(i),m(i)] = size(varargin{i});
+    p = [p;varargin{i}(:)];
+    if degree(varargin{i}) > 1
+        all_linear = 0;
+    end
+end
+
+if all_linear
+    varargout = varargin;
+    vararhout{end+1} = F;
+    return
+end
+
+plinear = p;
+F = set([]);
+
+% Get stuff
+vars  = getvariables(p);
+basis = getbase(p);
+[mt,vt] = yalmip('monomtable');
+
+% These are the original monomials
+vecvar = recover(vars);
+
+
+linear = find(vt(vars) == 0);
+quadratic = find(vt(vars) == 2);
+bilinear  = find(vt(vars) == 1);
+polynomial  = find(vt(vars) == 3);
+
+% replace x^2 with x
+if ~isempty(quadratic)
+    [ii,jj] = find(mt(vars(quadratic),:));
+    z_quadratic = recover(jj);
+%    vecvar(quadratic) = recover(jj);
+else
+    quadratic = [];
+    z_quadratic = [];
+end
+
+% replace x*y with z, x>z, x>z, 1+z>x+y
+if ~isempty(bilinear)
+    z_bilinear = sdpvar(length(bilinear),1);
+    [jj,ii] = find(mt(vars(bilinear),:)');  
+    x = recover(jj(1:2:end));
+    y = recover(jj(2:2:end));
+    F = F + set(x >= z_bilinear) + set(y >= z_bilinear) + set(1+z_bilinear > x + y) + set(0 <= z_bilinear <= 1);  
+%    vecvar(bilinear) = z_bilinear;
+else
+    bilinear = [];
+    z_bilinear = [];
+end
+    
+%general case a bit slower
+if ~isempty(polynomial)
+    z_polynomial = sdpvar(length(polynomial),1);
+    xvar = [];
+    yvar = [];
+    for i = 1:length(z_polynomial)
+        [ii,jj] = find(mt(vars(polynomial(i)),:));
+        x = recover(jj);
+        F = F + set(x >= z_polynomial(i)) + set(length(x)-1+z_polynomial(i) > sum(x)) + set(0 <= z_polynomial(i) <= 1);
+    end
+%    vecvar(polynomial) = z_polynomial;
+else
+    z_polynomial = [];
+    polynomial = [];
+end
+
+% ii = [linear quadratic bilinear polynomial];
+% jj = ones(length(ii),1);
+% kk = [recover(vars(linear));z_quadratic;z_bilinear;z_polynomial];
+% sparse([linear quadratic bilinear polynomial],1,[recover(vars(linear));z_quadratic;z_bilinear;z_polynomial])
+
+ii = [linear quadratic bilinear polynomial];
+jj = ones(length(ii),1);
+kk = [recover(vars(linear));z_quadratic;z_bilinear;z_polynomial];
+vecvar = sparse(ii(:),jj(:),kk(:));
+
+% Recover the whole thing
+plinear = basis*[1;vecvar];
+
+% And now get the original sizes
+top = 1;
+for i = 1:nargin
+    varargout{i} = reshape(plinear(top:top+n(i)*m(i)-1),n(i),m(i));
+    top = top + n(i)*m(i);
+end
+varargout{end+1} = F;
+
+    

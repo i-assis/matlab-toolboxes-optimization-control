@@ -1,0 +1,30 @@
+HTTrack3.48-21 launched on Wed, 28 Mar 2018 17:05:50 at http://ftp.feq.ufu.br/Luis_Claudio/HYBRID/mpt_ver262/mpt/yalmip/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/*
+(webhttrack -q -%i -w http://ftp.feq.ufu.br/Luis_Claudio/HYBRID/mpt_ver262/mpt/yalmip/ -O "/home/rotorblade/Dropbox/MATLAB_TOOLBOXES/YALMIP-master/YALMIP Manual" -n -%P -N0 -s2 -p7 -D -a -K0 -c4 -%k -A25000 -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -%s -%u )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+17:11:14	Warning: 	HTML file (38602 bytes) retransferred due to lack of cache: ftp.feq.ufu.br/Luis_Claudio/HYBRID/mpt_ver262/mpt/yalmip/@sdpvar/
+17:11:27	Warning: 	HTML file (5819 bytes) retransferred due to lack of cache: ftp.feq.ufu.br/Luis_Claudio/HYBRID/mpt_ver262/mpt/yalmip/htmldata/ellipsoidal.htm
+17:11:27	Warning: 	HTML file (35440 bytes) retransferred due to lack of cache: ftp.feq.ufu.br/Luis_Claudio/HYBRID/mpt_ver262/mpt/yalmip/htmldata/extoperators.htm
+17:11:28	Warning: 	HTML file (10910 bytes) retransferred due to lack of cache: ftp.feq.ufu.br/Luis_Claudio/HYBRID/mpt_ver262/mpt/yalmip/htmldata/geometric.htm
+17:11:28	Warning: 	HTML file (4575 bytes) retransferred due to lack of cache: ftp.feq.ufu.br/Luis_Claudio/HYBRID/mpt_ver262/mpt/yalmip/htmldata/gevp.htm
+17:11:29	Warning: 	HTML file (6726 bytes) retransferred due to lack of cache: ftp.feq.ufu.br/Luis_Claudio/HYBRID/mpt_ver262/mpt/yalmip/htmldata/impexp.htm
+17:11:29	Warning: 	HTML file (5227 bytes) retransferred due to lack of cache: ftp.feq.ufu.br/Luis_Claudio/HYBRID/mpt_ver262/mpt/yalmip/htmldata/lyapunov.htm
+17:11:29	Warning: 	HTML file (8362 bytes) retransferred due to lack of cache: ftp.feq.ufu.br/Luis_Claudio/HYBRID/mpt_ver262/mpt/yalmip/htmldata/ranksdp.htm
+17:11:31	Error: 	"Not Found" (404) at link https://web.stanford.edu/~boyd/reports/socp.pdf (from ftp.feq.ufu.br/Luis_Claudio/HYBRID/mpt_ver262/mpt/yalmip/htmldata/readmore.htm)
+17:11:31	Error: 	"Not Found" (404) at link https://web.stanford.edu/~boyd/reports/semidef_prog.pdf (from ftp.feq.ufu.br/Luis_Claudio/HYBRID/mpt_ver262/mpt/yalmip/htmldata/readmore.htm)
+17:11:31	Error: 	"Not Found" (404) at link https://web.stanford.edu/~boyd/reports/maxdet_rev.pdf (from ftp.feq.ufu.br/Luis_Claudio/HYBRID/mpt_ver262/mpt/yalmip/htmldata/readmore.htm)
+17:11:31	Error: 	"Unable to connect to the server" (-1) at link ftp://plato.asu.edu/pub/papers/paper93.pdf (from ftp.feq.ufu.br/Luis_Claudio/HYBRID/mpt_ver262/mpt/yalmip/htmldata/readmore.htm)
+17:11:31	Error: 	"Not Found" (404) at link control.ee.ethz.ch/~parrilo/pubs/files/thesis.pdf (from ftp.feq.ufu.br/Luis_Claudio/HYBRID/mpt_ver262/mpt/yalmip/htmldata/readmore.htm)
+17:11:31	Error: 	"Not Found" (404) at link https://web.stanford.edu/~boyd/reports/gp_tutorial.pdf (from ftp.feq.ufu.br/Luis_Claudio/HYBRID/mpt_ver262/mpt/yalmip/htmldata/readmore.htm)
+17:11:31	Error: 	"Not Found" (404) at link https://web.stanford.edu/~boyd/bv_cvxbook.pdf (from ftp.feq.ufu.br/Luis_Claudio/HYBRID/mpt_ver262/mpt/yalmip/htmldata/readmore.htm)
+17:11:31	Error: 	"Not Found" (404) at link control.ee.ethz.ch/~joloef/maxdet.zip (from ftp.feq.ufu.br/Luis_Claudio/HYBRID/mpt_ver262/mpt/yalmip/htmldata/solvers.htm)
+17:11:31	Error: 	"Not Found" (404) at link ftp.feq.ufu.br/Luis_Claudio/HYBRID/mpt_ver262/mpt/yalmip/@sdpvar/varargin{3}; (from ftp.feq.ufu.br/Luis_Claudio/HYBRID/mpt_ver262/mpt/yalmip/@sdpvar/sparse.m)
+17:11:31	Error: 	"Not Found" (404) at link ftp.feq.ufu.br/Luis_Claudio/HYBRID/mpt_ver262/mpt/yalmip/extras/getbase(obj); (from ftp.feq.ufu.br/Luis_Claudio/HYBRID/mpt_ver262/mpt/yalmip/extras/dualize.m)
+17:11:31	Error: 	"Not Found" (404) at link ftp.feq.ufu.br/Luis_Claudio/HYBRID/mpt_ver262/mpt/yalmip/extras/@ncvar/varargin{3}; (from ftp.feq.ufu.br/Luis_Claudio/HYBRID/mpt_ver262/mpt/yalmip/extras/@ncvar/sparse.m)
+
+HTTrack Website Copier/3.48-21 mirror complete in 5 minutes 41 seconds : 1109 links scanned, 1105 files written (5385298 bytes overall) [5747041 bytes received at 16853 bytes/sec], 853 bytes transferred using HTTP compression in 2 files, ratio 75%, 13.9 requests per connection
+(11 errors, 8 warnings, 0 messages)

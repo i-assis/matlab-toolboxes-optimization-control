@@ -1,0 +1,182 @@
+\documentclass{article}
+% ----------------------------------------------------------
+\usepackage[latin1]{inputenc}
+\usepackage[a4paper,top=1.5cm,bottom=2cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+% ----------------------------------------------------------
+% ========== Pacotes
+\input{C:/Users/FHZ/Dropbox/LaTeX_Inputs_padrao/Input_Pacotes_Gerais}
+%\input{C:/Users/FHZ/Dropbox/LaTeX_Inputs_padrao/Input_Pacotes_Tikz_Definicoes}
+% ========== 
+% ========== Novos comandos para escrever nomes pré-formatados
+\input{C:/Users/FHZ/Dropbox/LaTeX_Inputs_padrao/Input_NewCommand_Figures_Tikz_for_IEEE}
+%\input{C:/Users/FHZ/Dropbox/LaTeX_Inputs_padrao/Input_NewCommand_Figures_Tikz}
+% ==========
+% ========== Renomeando comandos
+%\input{C:/Users/FHZ/Dropbox/LaTeX_Inputs_padrao/Input_ReNewCommand}
+% ========== 
+% ========== Dados capa folha rosto
+%\input{C:/Users/FHZ/Dropbox/LaTeX_Inputs_padrao/Input_Dados_Capa_Folha_Rosto}
+% ========== 
+% ----------------------------------------------------------
+
+\begin{document}
+% ========== Capa
+%\input{C:/Users/FHZ/Dropbox/LaTeX_Inputs_padrao/Input_Capa}
+%\clearpage
+% ==========
+
+\section{Guia para teste de compilação {\LaTeX} na servidora}
+%\input{input_nome}
+
+Abra o ícone do ``\textit{MobaXterm Personal Edition}'' da \autoref{fig_00_Mobile_Terminal} na área de trabalho.
+
+\begin{figure}[H] 
+	\figIncLongCap 
+	{width = 0.1\linewidth, keepaspectratio} 
+	{Figuras/fig_00_Mobile_Terminal} 
+	{Ícone na área de trabalho para acessar o terminal.} 
+	\label{fig_00_Mobile_Terminal} 
+\end{figure} 
+
+Inicie dois terminais locais clicando em ``\textit{Start local terminal}'' conforme \autopageref{fig_01}.
+
+\begin{figure}[H] 
+	\figIncLongCap 
+	{width = 0.45\linewidth, keepaspectratio} 
+	{Figuras/fig_01} 
+	{Tela de abertura do Terminal.} 
+	\label{fig_01} 
+\end{figure} 
+
+O resultado da abertura de um terminal encontra-se na \autoref{fig_02}.
+
+\begin{figure}[H] 
+	\figIncLongCap 
+	{width = 0.45\linewidth, keepaspectratio} 
+	{Figuras/fig_02} 
+	{Abrindo um terminal.} 
+	\label{fig_02} 
+\end{figure} 
+
+O acesso se dá pelo comando:
+\begin{verbatim}
+	ssh labcamino@caminolab9.fem.unicamp.br
+\end{verbatim}
+onde ``labcamino'' é o usuário e o trecho após o ``\verb|@|'' é o endereço da servidora.
+
+No primeiro \textit{login} é necessário inserir a senha.
+Todos os usuários do laboratório sabem essa senha.
+
+Após entrar aparecerá o resultado tal como na \autopageref{fig_03}.
+
+\begin{figure}[H] 
+	\figIncLongCap 
+	{width = 0.45\linewidth, keepaspectratio} 
+	{Figuras/fig_03} 
+	{Resultado de entrada após digitação de senha.} 
+	\label{fig_03} 
+\end{figure} 
+
+A exibição do conteúdo de uma pasta é comentada na \autopageref{fig_04}.
+
+\begin{figure}[H] 
+	\figTwoSubfigIncLongCap 
+	{Comando ``dir''.} 
+	{width = 0.3\linewidth, keepaspectratio} 
+	{Figuras/fig_04a} 
+	{Comando ``ls''.} 
+	{width = 0.3\linewidth, keepaspectratio} 
+	{Figuras/fig_04b} 
+	{Comandos que apresentam o conteúdo de um diretório}
+	\label{fig_04a} 
+\end{figure} 
+
+O comando ``cd'' entra nas pastas. Utilize-o para chegar no local onde o arquivo se encontra \footnote{No ``DOS'' do Windows pode-se copiar o endereço na janela e colar clicando com o botão direito. Não sei se isso funciona no ``Linux''}. Verifique o resultado na \autoref{fig_05}.
+
+\begin{figure}[H] 
+	\figIncLongCap 
+	{width = 0.45\linewidth, keepaspectratio} 
+	{Figuras/fig_05} 
+	{Navegação até a pasta com o arquivo utilizando o comando ``cd''.} 
+	\label{fig_05} 
+\end{figure} 
+
+Para enviar um arquivo deve-se utilizar ``scp'':
+\begin{verbatim}
+scp arq.ext destino:. Enter
+\end{verbatim}
+
+Para enviar um arquivo nomeado ``exemplo.tex'' para a servidora:
+\begin{verbatim}
+scp exemplo.tex labcamino(at)caminolab9.fem.unicamp.br:.
+\end{verbatim}
+
+Repare que os dois pontos ``:`` e o ponto ``.'' devem ser adicionados\footnote{Não sei quais as combinação possíveis}.
+
+\begin{verbatim}
+scp -pr NOMEDAPASTA/ destino:. Enter
+\end{verbatim}
+
+O resultado da aplicação encontra-se na \autoref{fig_06}.
+
+\begin{figure}[H] 
+	\figIncLongCap 
+	{width = 0.45\linewidth, keepaspectratio} 
+	{Figuras/fig_06} 
+	{Envio de um arquivo para a servidora com comando ``scp''.} 
+	\label{fig_06} 
+\end{figure} 
+
+O resultado do envio pode ser conferido com o comando ``dir'' no terminal que se comunicou com a servidora conforme apresentado na \autoref{fig_07}.
+
+\begin{figure}[H] 
+	\figIncLongCap 
+	{width = 0.45\linewidth, keepaspectratio} 
+	{Figuras/fig_07} 
+	{Resultado do envio.} 
+	\label{fig_07} 
+\end{figure} 
+
+A compilação do arquivo é feita com o comando ``latex''. A \autoref{fig_08} apresenta o início da compilação.
+
+\begin{figure}[H] 
+	\figIncLongCap 
+	{width = 0.45\linewidth, keepaspectratio, trim = 0cm 9cm 0cm 0cm , clip = true} 
+	{Figuras/fig_08} 
+	{Compilação do arquivo ``.tex'' com o comando ``latex''.} 
+	\label{fig_08} 
+\end{figure} 
+
+Com a conclusão bem sucedida aparecerá um arquivo de mesmo nome do ``.tex'' compilado, porém com a extensão ``dvi''. Além de um ``.aux'' e um ``.log''.
+
+\begin{figure}[H] 
+	\figIncLongCap 
+	{width = 0.45\linewidth, keepaspectratio} 
+	{Figuras/fig_09} 
+	{Resultado da compilação é o surgimento do arquivo ``dvi''.} 
+	\label{fig_09} 
+\end{figure} 
+
+Se desejar, pode-se criar o arquivo ``\textit{PostScript}'' com o comando ``dvips''.
+
+A criação do arquivo ``pdf'' é feita com o comando ``ps2pdf''.
+
+\begin{figure}[H] 
+	\figIncLongCap 
+	{width = 0.45\linewidth, keepaspectratio} 
+	{Figuras/fig_10} 
+	{Criando arquivo ``pdf'' com comando ``ps2pdf''.} 
+	\label{fig_10} 
+\end{figure} 
+
+A saída da máquina é feita com ``exit''.
+
+\begin{figure}[H] 
+	\figIncLongCap 
+	{width = 0.45\linewidth, keepaspectratio} 
+	{Figuras/fig_11} 
+	{Saída da máquina com comando ``exit''.} 
+	\label{fig_11} 
+\end{figure} 
+
+\end{document}

@@ -1,0 +1,215 @@
+
+
+2016-08-26  Dimitri Peaucelle  <peaucelle@laas.fr>
+	
+	* updates related to the AerospaceLab paper (scenario and sequential scenario)
+	tag: rromuloc_160826
+
+2015-02-26  Dimitri Peaucelle  <peaucelle@laas.fr>
+	
+	* updates related to the Rocond15 paper (included scenario approach)
+	* Updated uncertainty/subsref.m that contained a bug 
+	tag: rromuloc_150226
+
+2014-11-07  Dimitri Peaucelle  <peaucelle@laas.fr>
+	
+	* Updated to fit last YALMIP notations (‘set’ command removed) 
+	tag: rromuloc_141107
+
+2013-12-06  Dimitri Peaucelle  <peaucelle@laas.fr>
+	
+	* Some bugs corrected - nothing major
+	* Version not guaranteed to be stable 
+	tag: rromuloc_131206
+
+2013-12-02  Dimitri Peaucelle  <peaucelle@laas.fr>
+	
+	* Major update - includes randomized methods
+	* Almost all files have been updated and new added
+	* Compatibility with previous versions is not guaranteed
+	* Version not guaranteed to be stable 
+	tag: rromuloc_131202
+
+2012-11-27  Dimitri Peaucelle  <peaucelle@laas.fr>
+	
+	* @ctrpb/size.m : corrected bug
+	* @melli/melli.m : don't remember what modification
+	* @melli/plot.m : improved to plot projection of any melli on a couple of coefficients
+	* @melli/size.m : created
+	* @melli/volume.m : created
+	* @ssmodel/nominal.m : for internal use (modified to fit ussmodel/center.m
+	* @ssmodel/subsasgn.m : do not remember modification
+	* @ssmodel/uminus.m : corrected a bug
+	* @ssmodel/sigma.m : for sigma plot
+	* @uncertainty/uncertainty.m : do not remember modif
+	* @uncertainty/center.m : created
+	* @ussmodel/u2diss.m : do not remember modif
+	* @ussmodel/center.m : created
+	* @ussmodel/poly2lft.m : created
+	tag: stable_121127
+
+2012-02-16  Dimitri Peaucelle  <peaucelle@laas.fr>
+	
+	* udiss.m : authorized the X matrix to be non negative definite
+	* upoly.m : authorized to make polytopes of one vertex
+	* @ctrpb/solvesdp.m : shift sur problèmes linéaires modifie de 0.1/nbvars à 1/nbvars
+	* @melli/plot.m : don't remeber any modif, but maybe
+	* @ssmodel/data.m : created
+	* @ssmodel/evalfr.m : allow frequency ranges - modeled as uncertainties
+	* @ssmodel/subsasgn.m : allow assignment to several elemnts of array
+	* @uncertainty/separator.m : don't remeber any modif, but maybe
+	* @ussmodel/evalfr.m : accordingly to the other one
+	* @ussmodel/mtimes.m : bug removed when multiplication of models with/without names
+	tag: stable_120216
+	
+2011-06-14  Dimitri Peaucelle  <peaucelle@laas.fr>
+	
+	* romuloc.m correction d'une faute de frappe
+	tag: stable_110614
+
+2011-06-01  Dimitri Peaucelle  <peaucelle@laas.fr>
+	
+	* ssmodel/subsasgn.m : modifie pour que l'on puisse modifier toutes matrices d'un polytope en une ligne
+	* ctrpb/solvesdp.m : LMI complexes sont converties automatiquement en reelles car SeDuMi 1.3 plante
+	* region/plot et region/radius : crees
+	* autres modifications mineures
+	tag: stable_110601
+
+
+2011-05-26  Dimitri Peaucelle  <peaucelle@laas.fr>
+	
+	* ctrpb/extractwc.m : ajout pour extraire pire cas en cas de modèles polytopiques
+	* ctrpb/size.m : ajout pour obtenir taille des pb LMI (variables, lignes)
+	* randpoly.m : generateur de systèmes polytopiques aleatoires
+	* M21C01T**P** modifees pour faire fonctionner extractwc.m
+	tag: stable_110526
+
+2011-05-24  Dimitri Peaucelle  <peaucelle@laas.fr>
+	
+	* Corrections majeures pour faciliter usage modeles intervales et parallelotopiques (convertis automatiquement en polytopes à l'interieur des fonctions)
+	* M21C01T21P** modifies pour réduire autant que possible les SV
+	tag: stable_110524
+
+2009-09-29  Dimitri Peaucelle  <peaucelle@laas.fr>
+	
+	* Contents (Correction du nom de version)
+	* @uncertainty/isin (Correction d'une erreur de frappe)
+	tag: stable_090909
+	
+2009-07-27  Dimitri Peaucelle  <peaucelle@laas.fr>
+	
+	* Library/M21C01T21P31 (Correction d'une erreur bizarre)
+	tag: stable_090727
+
+2009-02-20  Alberto Bortott  <Alberto.Bortott@laas.fr>
+	
+	* @ussmodel/feedback 
+	* @ssmodel/feedback (maintenant compatibles avec correcteurs du type SS object)
+	tag: stable_090220
+
+2008-02-18  Dimitri Peaucelle  <peaucelle@laas.fr>
+	
+	* @uncertainty/randu.m (récrée pour compatibilté ascendente)
+	* @melli/rande.m (récrée pour compatibilté ascendente)
+	* toutes les fonctions de librairy concernant les perfo (introduit scalaire de la S-procedure quand pas optimisation)
+	* @ctrpb/solvesdp.m shift des LMI dans le cas où pas d'optimisation (LMI homogènes) 
+	tag: stable_090219
+
+2008-12-04  Alberto Bortott  <Alberto.Bortott@laas.fr>
+	
+	* @uncertainty/rand.m (remplace randu.m)
+	* @melli/rand.m (remplace rande.m)
+	* @ussmodel/rand.m
+	* @ssmodel/rand.m
+	tag: stable_081204
+
+2008-11-26  Alberto Bortott  <Alberto.Bortott@laas.fr>
+	
+	* @uncertainty/u2diss completé
+	tag: stable_081126
+
+
+2008-11-21  Alberto Bortott  <Alberto.Bortott@laas.fr>
+
+	* Modif ussmodel.m pour faire la conversion LFR==>USSMODEL (encore quelques parties à faire)
+	* @ussmodel/u2diss
+	* @uncertainty/u2diss (encore à compléter)
+
+2008-11-14  Alberto Bortott  <Alberto.Bortott@laas.fr>
+
+	* Première version du projet CNES
+
+2008-11-14  Alberto Bortott  <Alberto.Bortott@laas.fr>
+
+	* Version de fin de stage, stable
+	tag : stable_081114
+
+2007-06-12  Philippe Spiesser  <Philippe.Spiesser@laas.fr>
+
+	* @ctrpb/ctrpb.m, @ctrpb/subsref.m, @ctrpb/plus.m,
+	@ctrpb/mtimes.m,@ctrpb/h2.m, @ctrpb/hinfty.m, @ctrpb/i2p.m,
+	@ctrpb/solvesdp.m: introduction initiale du multiobjectif pondéré.
+
+	* library/M21C01T21P21.m: définition d'une variable utilisée mais
+	non définie.
+
+	(tag : retraite_philippe)
+
+2007-04-18  Philippe Spiesser  <Philippe.Spiesser@laas.fr>
+
+	* library/M11C11T01P01.m, library/M11C11T01P21.m,
+	library/M11C11T01P31.m, library/M11C11T01P41.m,
+	library/M21C11T01P21.m, library/M21C11T01P31.m,
+	library/M21C11T01P41.m: amélioration de la gestion des variables.
+
+--------------------- End --------------------- : 
+
+2007-04-17  Philippe Spiesser  <Philippe.Spiesser@laas.fr>
+
+	* @ctrpb/plus.m: ajout de l'aide.
+
+2007-04-10  Dimitri Peaucelle  <Dimitri.Peaucelle@laas.fr>
+
+	* library/M21C11T01P41.m: correction sur la quatrième contrainte.
+
+2007-04-10  Dimitri Peaucelle  <Dimitri.Peaucelle@laas.fr>
+
+	* @ssmodel/h2.m, @ssmodel/hinfty.m, @ssmodel/i2p.m,
+	@ussmodel/h2.m, @ussmodel/hinfty.m, @ussmodel/i2p.m: suppression
+	de l'affichage si un seul argument.
+
+2007-03-22  Philippe Spiesser  <Philippe.Spiesser@laas.fr>
+
+	* romuloc.m: prise en compte de l'addition dans romuloc(4).
+
+	* @ctrpb/plus.m: introduction de l'addition de problèmes de controle.
+
+	* library/M21C01T21P41.m: correction typographique dans le code.
+
+2007-03-15  Philippe Spiesser  <Philippe.Spiesser@laas.fr>
+
+	* @ctrpb/ctrpb.m: modification de la définition de problèmes de
+	controle.
+
+	* @ssmodel/stability.m, @ssmodel/dstability.m,
+	@ssmodel/h2.m, @ssmodel/hinfty.m, @ssmodel/i2p.m,: ajout des fonctions.
+
+	* @ussmodel/stability.m, @ussmodel/dstability.m,
+	@ussmodel/h2.m, @ussmodel/hinfty.m, @ussmodel/i2p.m,: ajout des
+	fonctions. 
+
+2006-12-14  Philippe Spiesser  <Philippe.Spiesser@laas.fr>
+
+	* uinter.m, unb.m, unbc.m, uparal.m, upoly.m, upos.m: Quelques
+	corrections typographiques dans les en-têtes.
+
+	* romuloc.m: Inclusion de deux exemples de retour d´etat.
+
+	* Contents.m: Ajout de ssmodel/uminus.
+
+	* romulocsf.m: Suppression en vue de distribution; les exemples de
+	retour d'état seront inclus dans romuloc.
+
+	* udiss.m: Corrections typoographiques.
+
+2006-12-12  Philippe Spiess
